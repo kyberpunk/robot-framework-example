@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240120 19:25:10.276" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="/home/z00405uj/git/robot-example/example-tests/tests">
+<suite id="s1-s1" name="Example" source="/home/z00405uj/git/robot-example/example-tests/tests/example.robot">
+<kw name="Setup Browser" library="common" type="SETUP">
+<msg timestamp="20240120 19:25:10.662" level="TRACE">Arguments: [  ]</msg>
+<kw name="New Context" library="Browser">
+<arg>recordVideo={'dir':'videos'}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20240120 19:25:10.662" level="TRACE">Arguments: [ recordVideo={'dir': 'videos'} ]</msg>
+<msg timestamp="20240120 19:25:10.663" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "recordVideo": {
+    "dir": "/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos",
+    "size": {
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg timestamp="20240120 19:25:10.840" level="INFO">Successfully created context. </msg>
+<msg timestamp="20240120 19:25:10.840" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'recordVideo': {'dir': '/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos', 'size': {'width': 1280, 'height': 720}}, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg timestamp="20240120 19:25:10.840" level="INFO">No browser was open. New browser was automatically opened when this context is created.</msg>
+<msg timestamp="20240120 19:25:10.840" level="TRACE">Return: 'context=630d6012-2298-4326-9b3e-eebddb35a441'</msg>
+<status status="PASS" starttime="20240120 19:25:10.662" endtime="20240120 19:25:10.840"/>
+</kw>
+<msg timestamp="20240120 19:25:10.840" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:10.662" endtime="20240120 19:25:10.840"/>
+</kw>
+<test id="s1-s1-t1" name="Greeting contains the name (simple)" line="12">
+<kw name="Log" library="BuiltIn" type="SETUP">
+<arg>This is test setup!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240120 19:25:10.843" level="TRACE">Arguments: [ 'This is test setup!' ]</msg>
+<msg timestamp="20240120 19:25:10.843" level="INFO">This is test setup!</msg>
+<msg timestamp="20240120 19:25:10.843" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:10.842" endtime="20240120 19:25:10.843"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${DEFAULT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240120 19:25:10.844" level="TRACE">Arguments: [ 'http://localhost:3000' ]</msg>
+<msg timestamp="20240120 19:25:11.028" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg timestamp="20240120 19:25:11.029" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1280" height="720" controls&gt;&lt;source src="browser/video/videos/53c1f345a179708c14b6b0020212b24f.webm" type="video/webm"&gt;&lt;/video&gt;</msg>
+<msg timestamp="20240120 19:25:11.029" level="TRACE">Return: {'page_id': 'page=a0b6e31c-2356-41b5-b458-6c6f43ea2822',
+ 'video_path': '/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos/53c1f345a179708c14b6b0020212b24f.webm'}</msg>
+<status status="PASS" starttime="20240120 19:25:10.843" endtime="20240120 19:25:11.029"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${SEL_NAME_INPUT}</arg>
+<arg>Vit</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.030" level="TRACE">Arguments: [ 'input#name' | 'Vit' ]</msg>
+<msg timestamp="20240120 19:25:11.030" level="INFO">Types the text 'Vit' in the given field.</msg>
+<msg timestamp="20240120 19:25:11.087" level="DEBUG">Typed text "Vit" on "input#name"</msg>
+<msg timestamp="20240120 19:25:11.088" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.029" endtime="20240120 19:25:11.088"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${SEL_SUBMIT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.088" level="TRACE">Arguments: [ 'input#submit' ]</msg>
+<msg timestamp="20240120 19:25:11.089" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg timestamp="20240120 19:25:11.136" level="DEBUG">Clicked element: 'input#submit' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg timestamp="20240120 19:25:11.136" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.088" endtime="20240120 19:25:11.136"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${greeting}</var>
+<arg>${SEL_GREETING_TEXT}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.137" level="TRACE">Arguments: [ 'id=greeting' ]</msg>
+<msg timestamp="20240120 19:25:11.163" level="DEBUG">Text received successfully.</msg>
+<msg timestamp="20240120 19:25:11.163" level="INFO">Text: 'Hi Vit!'</msg>
+<msg timestamp="20240120 19:25:11.163" level="TRACE">Return: 'Hi Vit!'</msg>
+<msg timestamp="20240120 19:25:11.163" level="INFO">${greeting} = Hi Vit!</msg>
+<status status="PASS" starttime="20240120 19:25:11.136" endtime="20240120 19:25:11.163"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${greeting}</arg>
+<arg>Hi Vit!</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240120 19:25:11.164" level="TRACE">Arguments: [ 'Hi Vit!' | 'Hi Vit!' ]</msg>
+<msg timestamp="20240120 19:25:11.164" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20240120 19:25:11.164" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.164" endtime="20240120 19:25:11.164"/>
+</kw>
+<tag>GUI</tag>
+<status status="PASS" starttime="20240120 19:25:10.840" endtime="20240120 19:25:11.165"/>
+</test>
+<test id="s1-s1-t2" name="Greeting contains the name (behavior driven)" line="20">
+<kw name="Log" library="BuiltIn" type="SETUP">
+<arg>This is test setup!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240120 19:25:11.197" level="TRACE">Arguments: [ 'This is test setup!' ]</msg>
+<msg timestamp="20240120 19:25:11.197" level="INFO">This is test setup!</msg>
+<msg timestamp="20240120 19:25:11.197" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.197" endtime="20240120 19:25:11.197"/>
+</kw>
+<kw name="When Get greeting for name Vit" library="common" sourcename="Get greeting for name ${name}">
+<msg timestamp="20240120 19:25:11.198" level="TRACE">Arguments: [ ${name}='Vit' ]</msg>
+<msg timestamp="20240120 19:25:11.198" level="TRACE">Arguments: [ ${name}='Vit' ]</msg>
+<kw name="New Page" library="Browser">
+<arg>${DEFAULT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240120 19:25:11.198" level="TRACE">Arguments: [ 'http://localhost:3000' ]</msg>
+<msg timestamp="20240120 19:25:11.348" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg timestamp="20240120 19:25:11.348" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1280" height="720" controls&gt;&lt;source src="browser/video/videos/2b677356fcc1b7918ecab0c26d1abc5a.webm" type="video/webm"&gt;&lt;/video&gt;</msg>
+<msg timestamp="20240120 19:25:11.348" level="TRACE">Return: {'page_id': 'page=96e5a89a-5945-49c0-b247-57082aa589b8',
+ 'video_path': '/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos/2b677356fcc1b7918ecab0c26d1abc5a.webm'}</msg>
+<status status="PASS" starttime="20240120 19:25:11.198" endtime="20240120 19:25:11.348"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${SEL_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.349" level="TRACE">Arguments: [ 'input#name' | 'Vit' ]</msg>
+<msg timestamp="20240120 19:25:11.349" level="INFO">Types the text 'Vit' in the given field.</msg>
+<msg timestamp="20240120 19:25:11.410" level="DEBUG">Typed text "Vit" on "input#name"</msg>
+<msg timestamp="20240120 19:25:11.410" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.349" endtime="20240120 19:25:11.410"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${SEL_SUBMIT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.411" level="TRACE">Arguments: [ 'input#submit' ]</msg>
+<msg timestamp="20240120 19:25:11.411" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg timestamp="20240120 19:25:11.462" level="DEBUG">Clicked element: 'input#submit' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg timestamp="20240120 19:25:11.463" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.410" endtime="20240120 19:25:11.463"/>
+</kw>
+<msg timestamp="20240120 19:25:11.463" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.197" endtime="20240120 19:25:11.463"/>
+</kw>
+<kw name="Then Greeting is Hi Vit!" library="common" sourcename="Greeting is ${expected}">
+<msg timestamp="20240120 19:25:11.464" level="TRACE">Arguments: [ ${expected}='Hi Vit!' ]</msg>
+<msg timestamp="20240120 19:25:11.464" level="TRACE">Arguments: [ ${expected}='Hi Vit!' ]</msg>
+<kw name="Get Text" library="Browser">
+<var>${greeting}</var>
+<arg>${SEL_GREETING_TEXT}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.464" level="TRACE">Arguments: [ 'id=greeting' ]</msg>
+<msg timestamp="20240120 19:25:11.482" level="DEBUG">Text received successfully.</msg>
+<msg timestamp="20240120 19:25:11.482" level="INFO">Text: 'Hi Vit!'</msg>
+<msg timestamp="20240120 19:25:11.482" level="TRACE">Return: 'Hi Vit!'</msg>
+<msg timestamp="20240120 19:25:11.482" level="INFO">${greeting} = Hi Vit!</msg>
+<status status="PASS" starttime="20240120 19:25:11.464" endtime="20240120 19:25:11.482"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${greeting}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240120 19:25:11.483" level="TRACE">Arguments: [ 'Hi Vit!' | 'Hi Vit!' ]</msg>
+<msg timestamp="20240120 19:25:11.483" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20240120 19:25:11.483" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.483" endtime="20240120 19:25:11.483"/>
+</kw>
+<msg timestamp="20240120 19:25:11.483" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.463" endtime="20240120 19:25:11.483"/>
+</kw>
+<tag>GUI</tag>
+<status status="PASS" starttime="20240120 19:25:11.194" endtime="20240120 19:25:11.483"/>
+</test>
+<test id="s1-s1-t3" name="Test greetings for different names (data driven)" line="25">
+<kw name="Log" library="BuiltIn" type="SETUP">
+<arg>This is test setup!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240120 19:25:11.509" level="TRACE">Arguments: [ 'This is test setup!' ]</msg>
+<msg timestamp="20240120 19:25:11.509" level="INFO">This is test setup!</msg>
+<msg timestamp="20240120 19:25:11.509" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.508" endtime="20240120 19:25:11.509"/>
+</kw>
+<kw name="Check greeting for name" library="common">
+<arg>Vit</arg>
+<msg timestamp="20240120 19:25:11.509" level="TRACE">Arguments: [ ${name}='Vit' ]</msg>
+<kw name="Get greeting for name ${name}" library="common" sourcename="Get greeting for name ${name}">
+<msg timestamp="20240120 19:25:11.509" level="TRACE">Arguments: [ ${name}='Vit' ]</msg>
+<msg timestamp="20240120 19:25:11.509" level="TRACE">Arguments: [ ${name}='Vit' ]</msg>
+<kw name="New Page" library="Browser">
+<arg>${DEFAULT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240120 19:25:11.510" level="TRACE">Arguments: [ 'http://localhost:3000' ]</msg>
+<msg timestamp="20240120 19:25:11.668" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg timestamp="20240120 19:25:11.669" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1280" height="720" controls&gt;&lt;source src="browser/video/videos/3f13ee413f38ca7c4ed410ae55f6a8a2.webm" type="video/webm"&gt;&lt;/video&gt;</msg>
+<msg timestamp="20240120 19:25:11.669" level="TRACE">Return: {'page_id': 'page=7af3d606-1121-42ee-bceb-7ebc28b87c27',
+ 'video_path': '/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos/3f13ee413f38ca7c4ed410ae55f6a8a2.webm'}</msg>
+<status status="PASS" starttime="20240120 19:25:11.510" endtime="20240120 19:25:11.669"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${SEL_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.669" level="TRACE">Arguments: [ 'input#name' | 'Vit' ]</msg>
+<msg timestamp="20240120 19:25:11.669" level="INFO">Types the text 'Vit' in the given field.</msg>
+<msg timestamp="20240120 19:25:11.716" level="DEBUG">Typed text "Vit" on "input#name"</msg>
+<msg timestamp="20240120 19:25:11.716" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.669" endtime="20240120 19:25:11.716"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${SEL_SUBMIT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.716" level="TRACE">Arguments: [ 'input#submit' ]</msg>
+<msg timestamp="20240120 19:25:11.717" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg timestamp="20240120 19:25:11.766" level="DEBUG">Clicked element: 'input#submit' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg timestamp="20240120 19:25:11.766" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.716" endtime="20240120 19:25:11.766"/>
+</kw>
+<msg timestamp="20240120 19:25:11.766" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.509" endtime="20240120 19:25:11.766"/>
+</kw>
+<kw name="Greeting is Hi ${name}!" library="common" sourcename="Greeting is ${expected}">
+<msg timestamp="20240120 19:25:11.766" level="TRACE">Arguments: [ ${expected}='Hi Vit!' ]</msg>
+<msg timestamp="20240120 19:25:11.766" level="TRACE">Arguments: [ ${expected}='Hi Vit!' ]</msg>
+<kw name="Get Text" library="Browser">
+<var>${greeting}</var>
+<arg>${SEL_GREETING_TEXT}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.767" level="TRACE">Arguments: [ 'id=greeting' ]</msg>
+<msg timestamp="20240120 19:25:11.785" level="DEBUG">Text received successfully.</msg>
+<msg timestamp="20240120 19:25:11.785" level="INFO">Text: 'Hi Vit!'</msg>
+<msg timestamp="20240120 19:25:11.786" level="TRACE">Return: 'Hi Vit!'</msg>
+<msg timestamp="20240120 19:25:11.786" level="INFO">${greeting} = Hi Vit!</msg>
+<status status="PASS" starttime="20240120 19:25:11.767" endtime="20240120 19:25:11.786"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${greeting}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240120 19:25:11.786" level="TRACE">Arguments: [ 'Hi Vit!' | 'Hi Vit!' ]</msg>
+<msg timestamp="20240120 19:25:11.786" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20240120 19:25:11.786" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.786" endtime="20240120 19:25:11.786"/>
+</kw>
+<msg timestamp="20240120 19:25:11.786" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.766" endtime="20240120 19:25:11.786"/>
+</kw>
+<msg timestamp="20240120 19:25:11.786" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.509" endtime="20240120 19:25:11.786"/>
+</kw>
+<kw name="Check greeting for name" library="common">
+<arg>Karel</arg>
+<msg timestamp="20240120 19:25:11.787" level="TRACE">Arguments: [ ${name}='Karel' ]</msg>
+<kw name="Get greeting for name ${name}" library="common" sourcename="Get greeting for name ${name}">
+<msg timestamp="20240120 19:25:11.787" level="TRACE">Arguments: [ ${name}='Karel' ]</msg>
+<msg timestamp="20240120 19:25:11.787" level="TRACE">Arguments: [ ${name}='Karel' ]</msg>
+<kw name="New Page" library="Browser">
+<arg>${DEFAULT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240120 19:25:11.787" level="TRACE">Arguments: [ 'http://localhost:3000' ]</msg>
+<msg timestamp="20240120 19:25:11.934" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg timestamp="20240120 19:25:11.934" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1280" height="720" controls&gt;&lt;source src="browser/video/videos/8eacebe2b12244da19a66c3f9cd3aae6.webm" type="video/webm"&gt;&lt;/video&gt;</msg>
+<msg timestamp="20240120 19:25:11.934" level="TRACE">Return: {'page_id': 'page=1461452c-85d9-49db-9045-d2dc6d0fd393',
+ 'video_path': '/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos/8eacebe2b12244da19a66c3f9cd3aae6.webm'}</msg>
+<status status="PASS" starttime="20240120 19:25:11.787" endtime="20240120 19:25:11.934"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${SEL_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.935" level="TRACE">Arguments: [ 'input#name' | 'Karel' ]</msg>
+<msg timestamp="20240120 19:25:11.935" level="INFO">Types the text 'Karel' in the given field.</msg>
+<msg timestamp="20240120 19:25:11.990" level="DEBUG">Typed text "Karel" on "input#name"</msg>
+<msg timestamp="20240120 19:25:11.991" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.935" endtime="20240120 19:25:11.991"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${SEL_SUBMIT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:11.992" level="TRACE">Arguments: [ 'input#submit' ]</msg>
+<msg timestamp="20240120 19:25:11.992" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg timestamp="20240120 19:25:12.029" level="DEBUG">Clicked element: 'input#submit' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg timestamp="20240120 19:25:12.029" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.991" endtime="20240120 19:25:12.029"/>
+</kw>
+<msg timestamp="20240120 19:25:12.030" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.787" endtime="20240120 19:25:12.030"/>
+</kw>
+<kw name="Greeting is Hi ${name}!" library="common" sourcename="Greeting is ${expected}">
+<msg timestamp="20240120 19:25:12.030" level="TRACE">Arguments: [ ${expected}='Hi Karel!' ]</msg>
+<msg timestamp="20240120 19:25:12.030" level="TRACE">Arguments: [ ${expected}='Hi Karel!' ]</msg>
+<kw name="Get Text" library="Browser">
+<var>${greeting}</var>
+<arg>${SEL_GREETING_TEXT}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:12.030" level="TRACE">Arguments: [ 'id=greeting' ]</msg>
+<msg timestamp="20240120 19:25:12.045" level="DEBUG">Text received successfully.</msg>
+<msg timestamp="20240120 19:25:12.046" level="INFO">Text: 'Hi Karel!'</msg>
+<msg timestamp="20240120 19:25:12.046" level="TRACE">Return: 'Hi Karel!'</msg>
+<msg timestamp="20240120 19:25:12.046" level="INFO">${greeting} = Hi Karel!</msg>
+<status status="PASS" starttime="20240120 19:25:12.030" endtime="20240120 19:25:12.046"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${greeting}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240120 19:25:12.047" level="TRACE">Arguments: [ 'Hi Karel!' | 'Hi Karel!' ]</msg>
+<msg timestamp="20240120 19:25:12.047" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20240120 19:25:12.047" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.046" endtime="20240120 19:25:12.047"/>
+</kw>
+<msg timestamp="20240120 19:25:12.047" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.030" endtime="20240120 19:25:12.047"/>
+</kw>
+<msg timestamp="20240120 19:25:12.047" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:11.787" endtime="20240120 19:25:12.047"/>
+</kw>
+<kw name="Check greeting for name" library="common">
+<arg>Vit Holasek</arg>
+<msg timestamp="20240120 19:25:12.047" level="TRACE">Arguments: [ ${name}='Vit Holasek' ]</msg>
+<kw name="Get greeting for name ${name}" library="common" sourcename="Get greeting for name ${name}">
+<msg timestamp="20240120 19:25:12.048" level="TRACE">Arguments: [ ${name}='Vit Holasek' ]</msg>
+<msg timestamp="20240120 19:25:12.048" level="TRACE">Arguments: [ ${name}='Vit Holasek' ]</msg>
+<kw name="New Page" library="Browser">
+<arg>${DEFAULT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240120 19:25:12.048" level="TRACE">Arguments: [ 'http://localhost:3000' ]</msg>
+<msg timestamp="20240120 19:25:12.196" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg timestamp="20240120 19:25:12.197" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1280" height="720" controls&gt;&lt;source src="browser/video/videos/3dd54dd89f9b5cfd525f6544fb2f6ed9.webm" type="video/webm"&gt;&lt;/video&gt;</msg>
+<msg timestamp="20240120 19:25:12.197" level="TRACE">Return: {'page_id': 'page=f453c791-2f10-4962-a688-99893366fbc8',
+ 'video_path': '/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos/3dd54dd89f9b5cfd525f6544fb2f6ed9.webm'}</msg>
+<status status="PASS" starttime="20240120 19:25:12.048" endtime="20240120 19:25:12.197"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${SEL_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:12.197" level="TRACE">Arguments: [ 'input#name' | 'Vit Holasek' ]</msg>
+<msg timestamp="20240120 19:25:12.198" level="INFO">Types the text 'Vit Holasek' in the given field.</msg>
+<msg timestamp="20240120 19:25:12.267" level="DEBUG">Typed text "Vit Holasek" on "input#name"</msg>
+<msg timestamp="20240120 19:25:12.267" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.197" endtime="20240120 19:25:12.267"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${SEL_SUBMIT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:12.268" level="TRACE">Arguments: [ 'input#submit' ]</msg>
+<msg timestamp="20240120 19:25:12.268" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg timestamp="20240120 19:25:12.313" level="DEBUG">Clicked element: 'input#submit' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg timestamp="20240120 19:25:12.313" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.267" endtime="20240120 19:25:12.313"/>
+</kw>
+<msg timestamp="20240120 19:25:12.313" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.047" endtime="20240120 19:25:12.313"/>
+</kw>
+<kw name="Greeting is Hi ${name}!" library="common" sourcename="Greeting is ${expected}">
+<msg timestamp="20240120 19:25:12.314" level="TRACE">Arguments: [ ${expected}='Hi Vit Holasek!' ]</msg>
+<msg timestamp="20240120 19:25:12.314" level="TRACE">Arguments: [ ${expected}='Hi Vit Holasek!' ]</msg>
+<kw name="Get Text" library="Browser">
+<var>${greeting}</var>
+<arg>${SEL_GREETING_TEXT}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:12.314" level="TRACE">Arguments: [ 'id=greeting' ]</msg>
+<msg timestamp="20240120 19:25:12.331" level="DEBUG">Text received successfully.</msg>
+<msg timestamp="20240120 19:25:12.331" level="INFO">Text: 'Hi Vit Holasek!'</msg>
+<msg timestamp="20240120 19:25:12.331" level="TRACE">Return: 'Hi Vit Holasek!'</msg>
+<msg timestamp="20240120 19:25:12.332" level="INFO">${greeting} = Hi Vit Holasek!</msg>
+<status status="PASS" starttime="20240120 19:25:12.314" endtime="20240120 19:25:12.332"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${greeting}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240120 19:25:12.332" level="TRACE">Arguments: [ 'Hi Vit Holasek!' | 'Hi Vit Holasek!' ]</msg>
+<msg timestamp="20240120 19:25:12.332" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20240120 19:25:12.332" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.332" endtime="20240120 19:25:12.332"/>
+</kw>
+<msg timestamp="20240120 19:25:12.332" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.313" endtime="20240120 19:25:12.332"/>
+</kw>
+<msg timestamp="20240120 19:25:12.332" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.047" endtime="20240120 19:25:12.332"/>
+</kw>
+<kw name="Check greeting for name" library="common">
+<arg>!@#</arg>
+<msg timestamp="20240120 19:25:12.333" level="TRACE">Arguments: [ ${name}='!@#' ]</msg>
+<kw name="Get greeting for name ${name}" library="common" sourcename="Get greeting for name ${name}">
+<msg timestamp="20240120 19:25:12.333" level="TRACE">Arguments: [ ${name}='!@#' ]</msg>
+<msg timestamp="20240120 19:25:12.333" level="TRACE">Arguments: [ ${name}='!@#' ]</msg>
+<kw name="New Page" library="Browser">
+<arg>${DEFAULT_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20240120 19:25:12.333" level="TRACE">Arguments: [ 'http://localhost:3000' ]</msg>
+<msg timestamp="20240120 19:25:12.475" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg timestamp="20240120 19:25:12.476" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1280" height="720" controls&gt;&lt;source src="browser/video/videos/6652b7c056ba112a376bc6db583b37a4.webm" type="video/webm"&gt;&lt;/video&gt;</msg>
+<msg timestamp="20240120 19:25:12.476" level="TRACE">Return: {'page_id': 'page=dbf05204-bf13-42fa-9e1f-d240890e9acc',
+ 'video_path': '/home/z00405uj/git/robot-example/example-tests/test-results/browser/video/videos/6652b7c056ba112a376bc6db583b37a4.webm'}</msg>
+<status status="PASS" starttime="20240120 19:25:12.333" endtime="20240120 19:25:12.476"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${SEL_NAME_INPUT}</arg>
+<arg>${name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:12.476" level="TRACE">Arguments: [ 'input#name' | '!@#' ]</msg>
+<msg timestamp="20240120 19:25:12.476" level="INFO">Types the text '!@#' in the given field.</msg>
+<msg timestamp="20240120 19:25:12.529" level="DEBUG">Typed text "!@#" on "input#name"</msg>
+<msg timestamp="20240120 19:25:12.530" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.476" endtime="20240120 19:25:12.530"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${SEL_SUBMIT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:12.530" level="TRACE">Arguments: [ 'input#submit' ]</msg>
+<msg timestamp="20240120 19:25:12.531" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg timestamp="20240120 19:25:12.581" level="DEBUG">Clicked element: 'input#submit' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg timestamp="20240120 19:25:12.581" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.530" endtime="20240120 19:25:12.581"/>
+</kw>
+<msg timestamp="20240120 19:25:12.581" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.333" endtime="20240120 19:25:12.581"/>
+</kw>
+<kw name="Greeting is Hi ${name}!" library="common" sourcename="Greeting is ${expected}">
+<msg timestamp="20240120 19:25:12.582" level="TRACE">Arguments: [ ${expected}='Hi !@#!' ]</msg>
+<msg timestamp="20240120 19:25:12.582" level="TRACE">Arguments: [ ${expected}='Hi !@#!' ]</msg>
+<kw name="Get Text" library="Browser">
+<var>${greeting}</var>
+<arg>${SEL_GREETING_TEXT}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20240120 19:25:12.582" level="TRACE">Arguments: [ 'id=greeting' ]</msg>
+<msg timestamp="20240120 19:25:12.600" level="DEBUG">Text received successfully.</msg>
+<msg timestamp="20240120 19:25:12.600" level="INFO">Text: 'Hi !@#!'</msg>
+<msg timestamp="20240120 19:25:12.600" level="TRACE">Return: 'Hi !@#!'</msg>
+<msg timestamp="20240120 19:25:12.601" level="INFO">${greeting} = Hi !@#!</msg>
+<status status="PASS" starttime="20240120 19:25:12.582" endtime="20240120 19:25:12.601"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${greeting}</arg>
+<arg>${expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240120 19:25:12.601" level="TRACE">Arguments: [ 'Hi !@#!' | 'Hi !@#!' ]</msg>
+<msg timestamp="20240120 19:25:12.601" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20240120 19:25:12.601" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.601" endtime="20240120 19:25:12.601"/>
+</kw>
+<msg timestamp="20240120 19:25:12.601" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.581" endtime="20240120 19:25:12.601"/>
+</kw>
+<msg timestamp="20240120 19:25:12.601" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.333" endtime="20240120 19:25:12.601"/>
+</kw>
+<status status="PASS" starttime="20240120 19:25:11.506" endtime="20240120 19:25:12.602"/>
+</test>
+<test id="s1-s1-t4" name="Send GET request with arguments" line="32">
+<kw name="Log" library="BuiltIn" type="SETUP">
+<arg>This is test setup!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240120 19:25:12.705" level="TRACE">Arguments: [ 'This is test setup!' ]</msg>
+<msg timestamp="20240120 19:25:12.705" level="INFO">This is test setup!</msg>
+<msg timestamp="20240120 19:25:12.706" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.705" endtime="20240120 19:25:12.706"/>
+</kw>
+<kw name="When GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>http://httpbin.org/get</arg>
+<arg>params=value=test</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20240120 19:25:12.706" level="TRACE">Arguments: [ 'http://httpbin.org/get' | params='value=test' ]</msg>
+<msg timestamp="20240120 19:25:12.708" level="DEBUG">Starting new HTTP connection (1): httpbin.org:80</msg>
+<msg timestamp="20240120 19:25:12.959" level="DEBUG">http://httpbin.org:80 "GET /get?value=test HTTP/1.1" 200 341</msg>
+<msg timestamp="20240120 19:25:12.960" level="INFO">GET Request : url=http://httpbin.org/get?value=test 
+ path_url=/get?value=test 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240120 19:25:12.960" level="INFO">GET Response : url=http://httpbin.org/get?value=test 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 20 Jan 2024 18:25:13 GMT', 'Content-Type': 'application/json', 'Content-Length': '341', 'Connection': 'keep-alive', 'Server': 'gunicorn/19.9.0', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Credentials': 'true'} 
+ body={
+  "args": {
+    "value": "test"
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.28.2", 
+    "X-Amzn-Trace-Id": "Root=1-65ac1009-5a046b3a2473c1c45245d478"
+  }, 
+  "origin": "109.81.125.238", 
+  "url": "http://httpbin.org/get?value=test"
+}
+ 
+ </msg>
+<msg timestamp="20240120 19:25:12.960" level="TRACE">Return: &lt;Response [200]&gt;</msg>
+<msg timestamp="20240120 19:25:12.960" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240120 19:25:12.706" endtime="20240120 19:25:12.960"/>
+</kw>
+<kw name="Then Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<msg timestamp="20240120 19:25:12.961" level="TRACE">Arguments: [ '200' | &lt;Response [200]&gt; ]</msg>
+<msg timestamp="20240120 19:25:12.961" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.961" endtime="20240120 19:25:12.961"/>
+</kw>
+<kw name="And Should Be Equal As Strings" library="BuiltIn">
+<arg>test</arg>
+<arg>${response.json()}[args][value]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240120 19:25:12.963" level="TRACE">Arguments: [ 'test' | 'test' ]</msg>
+<msg timestamp="20240120 19:25:12.963" level="DEBUG">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20240120 19:25:12.963" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20240120 19:25:12.962" endtime="20240120 19:25:12.963"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20240120 19:25:12.700" endtime="20240120 19:25:12.963"/>
+</test>
+<status status="PASS" starttime="20240120 19:25:10.291" endtime="20240120 19:25:12.968"/>
+</suite>
+<status status="PASS" starttime="20240120 19:25:10.277" endtime="20240120 19:25:12.985"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">API</stat>
+<stat pass="2" fail="0" skip="0">GUI</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Example">Tests.Example</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

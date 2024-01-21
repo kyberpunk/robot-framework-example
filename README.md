@@ -34,6 +34,6 @@ cd example-tests
 robot -L trace --outputdir ./test-results ./tests
 ```
 
-Resulting test report can be found [here](/example-tests/test-results/report.html).
+Resulting test report can be found [here](https://raw.githack.com/kyberpunk/robot-framework-example/master/example-tests/test-results/report.html).
 
 There is also [example script](/example-tests/jira.sh) for Jira import of test results.
